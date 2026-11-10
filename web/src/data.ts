@@ -4,21 +4,14 @@ export const vkUrl = "https://vk.ru/sobaki_as";
 export const address = "с. Загородный, ул. 60 лет Победы, 1";
 
 export const images = {
-  // Working-dog / outdoor yard feel (placeholders until real base photos)
-  hero:
-    "https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?auto=format&fit=crop&w=2400&q=80",
-  yard:
-    "https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=1600&q=80",
-  school:
-    "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=1400&q=80",
-  hotel:
-    "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1400&q=80",
-  grooming:
-    "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1400&q=80",
-  founder:
-    "https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=1200&q=80",
-  city:
-    "https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=1400&q=80",
+  // Real photos from Yandex Maps gallery, Pet911 and VK wall of the school
+  hero: "./photos/hero.jpg",
+  yard: "./photos/yard.jpg",
+  school: "./photos/school.jpg",
+  hotel: "./photos/hotel.jpg",
+  grooming: "./photos/grooming.jpg",
+  founder: "./photos/founder.jpg",
+  city: "./photos/city.webp",
 };
 
 export const routes = [
@@ -86,21 +79,21 @@ export const cases = [
     breed: "Кавказская овчарка",
     task: "Агрессия к людям и сложный контакт с другими собаками",
     result: "Спокойнее в городе, управляемее на прогулке, социализация сдвинулась вперёд",
-    image: images.city,
+    image: "./photos/case-emir.jpg",
   },
   {
     name: "Джек",
     breed: "Малинуа",
     task: "Закрепление базы после курса «Послушание»",
     result: "Отработка «сидеть», «лежать», «стоять» с директором школы",
-    image: images.school,
+    image: "./photos/case-jack.webp",
   },
   {
     name: "Гром",
     breed: "Кане-корсо",
     task: "Курс «Подросток»",
     result: "Работа с характером и энергией крупной молодой собаки",
-    image: images.yard,
+    image: "./photos/case-grom.webp",
   },
 ];
 

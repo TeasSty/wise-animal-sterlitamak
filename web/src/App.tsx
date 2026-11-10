@@ -166,7 +166,7 @@ function App() {
               <div className="media-frame">
                 <img
                   src={images.school}
-                  alt="Занятие с собакой на открытой площадке"
+                  alt="Прогулка и занятие с немецкой овчаркой на базе"
                   width={1400}
                   height={1600}
                   loading="lazy"
@@ -272,7 +272,7 @@ function App() {
               <div className="media-frame">
                 <img
                   src={images.hotel}
-                  alt="Собака на территории базы"
+                  alt="Вольеры зоогостиницы на базе Wise Animal"
                   width={1400}
                   height={1200}
                   loading="lazy"
@@ -292,7 +292,7 @@ function App() {
               <div className="media-frame">
                 <img
                   src={images.grooming}
-                  alt="Уход за собакой"
+                  alt="Мытьё собаки в салоне груминга на базе"
                   width={1400}
                   height={1200}
                   loading="lazy"
@@ -319,7 +319,7 @@ function App() {
               <div className="media-frame">
                 <img
                   src={images.founder}
-                  alt="Рабочий кадр с собакой на улице"
+                  alt="Алексей Саламатин с немецкой овчаркой"
                   width={1200}
                   height={1400}
                   loading="lazy"
