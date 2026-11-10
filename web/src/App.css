@@ -1,0 +1,814 @@
+/* ——— Header ——— */
+.header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 20;
+  padding: 1.15rem 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-mark {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.nav a {
+  color: color-mix(in srgb, #fff 82%, transparent);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+.nav-phone {
+  color: #fff !important;
+  font-weight: 600 !important;
+}
+
+.nav-toggle {
+  display: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1px solid color-mix(in srgb, #fff 40%, transparent);
+  background: color-mix(in srgb, #000 25%, transparent);
+  color: #fff;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+/* ——— Hero ——— */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: end;
+  color: #fff;
+  isolation: isolate;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.82) contrast(1.05) brightness(0.78);
+  animation: heroDrift 18s var(--ease) infinite alternate;
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(12, 11, 9, 0.35) 0%, rgba(12, 11, 9, 0.18) 38%, rgba(12, 11, 9, 0.72) 100%),
+    linear-gradient(90deg, rgba(12, 11, 9, 0.35) 0%, transparent 55%);
+}
+
+.hero-content {
+  width: min(100% - 2.5rem, var(--max));
+  margin: 0 auto 5.5rem;
+  display: grid;
+  gap: 1.15rem;
+  justify-items: start;
+  max-width: var(--max);
+  animation: riseIn 1.1s var(--ease) both;
+}
+
+.hero-content > * {
+  max-width: 34rem;
+}
+
+.hero-brand {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 8vw, 5.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.hero-line {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  max-width: 28ch;
+  color: color-mix(in srgb, #fff 88%, transparent);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+}
+
+.hero-scroll {
+  position: absolute;
+  right: max(1.25rem, calc((100% - var(--max)) / 2));
+  bottom: 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, #fff 70%, transparent);
+}
+
+/* ——— After hero strip ——— */
+.trust-strip {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 1rem 0;
+  border-bottom: 1px solid color-mix(in srgb, #fff 10%, transparent);
+}
+
+.trust-strip-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: space-between;
+  font-size: 0.92rem;
+}
+
+.trust-strip strong {
+  font-weight: 600;
+}
+
+/* ——— Yard map ——— */
+.yard {
+  padding: var(--space-2xl) 0 var(--space-xl);
+  background:
+    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--sky) 16%, transparent), transparent 42%),
+    var(--ground);
+}
+
+.yard-head {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: var(--space-lg);
+}
+
+.yard-routes {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.route {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 70%, transparent);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.25s var(--ease),
+    border-color 0.25s var(--ease),
+    transform 0.25s var(--ease);
+}
+
+.route:hover {
+  background: var(--paper);
+  border-color: color-mix(in srgb, var(--ink) 28%, transparent);
+  transform: translateX(4px);
+}
+
+.route-index {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--bark);
+}
+
+.route h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  margin-bottom: 0.25rem;
+}
+
+.route p {
+  color: color-mix(in srgb, var(--ink) 72%, transparent);
+  max-width: 48ch;
+}
+
+.route-go {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--marker);
+  font-weight: 700;
+}
+
+/* ——— Requests ——— */
+.requests {
+  padding: var(--space-xl) 0;
+  background: var(--paper);
+  border-block: 1px solid var(--line);
+}
+
+.requests-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.request-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.request-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.request-item span:first-child {
+  font-weight: 600;
+}
+
+.request-item span:last-child {
+  color: var(--bark);
+  font-size: 0.92rem;
+  text-align: right;
+}
+
+/* ——— School ——— */
+.school {
+  padding: var(--space-2xl) 0;
+}
+
+.school-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-lg);
+  align-items: stretch;
+}
+
+.school-visual {
+  position: sticky;
+  top: 1.25rem;
+  align-self: start;
+}
+
+.school-visual .media-frame {
+  aspect-ratio: 4 / 5;
+  height: auto;
+  min-height: 0;
+}
+
+.school-copy {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+}
+
+.course-rail {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.course {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.course h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.course p {
+  color: color-mix(in srgb, var(--ink) 70%, transparent);
+}
+
+.course-mark {
+  align-self: center;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--marker);
+}
+
+/* ——— Results ——— */
+.results {
+  padding: var(--space-2xl) 0;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.results .eyebrow {
+  color: color-mix(in srgb, var(--paper) 70%, transparent);
+}
+
+.results .eyebrow::before {
+  background: color-mix(in srgb, var(--paper) 55%, transparent);
+}
+
+.results .section-lead {
+  color: color-mix(in srgb, var(--paper) 72%, transparent);
+}
+
+.results-head {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: var(--space-lg);
+}
+
+.case-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.case {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  background: #111;
+  overflow: hidden;
+}
+
+.case-media {
+  min-height: 0;
+  aspect-ratio: 5 / 4;
+}
+
+.case-media img {
+  filter: saturate(0.8) contrast(1.05) brightness(0.9);
+}
+
+.case-body {
+  padding: 1.6rem 1.5rem;
+  display: grid;
+  align-content: center;
+  gap: 0.85rem;
+}
+
+.case-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1;
+}
+
+.case-breed {
+  color: var(--sky);
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.case-meta {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.case-meta strong {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--paper) 55%, transparent);
+  margin-bottom: 0.15rem;
+}
+
+/* ——— Hotel ——— */
+.hotel {
+  padding: var(--space-2xl) 0;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--sky) 10%, var(--ground)), var(--ground) 40%);
+}
+
+.hotel-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: var(--space-lg);
+}
+
+.hotel-points {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.hotel-point h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+}
+
+.hotel-point p {
+  color: color-mix(in srgb, var(--ink) 74%, transparent);
+  max-width: 42ch;
+}
+
+.hotel-visual {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.hotel-visual .media-frame {
+  aspect-ratio: 4 / 3;
+  height: auto;
+  min-height: 0;
+}
+
+.hotel-note {
+  padding: 1rem 1.1rem;
+  border-left: 3px solid var(--marker);
+  background: var(--paper);
+  font-family: var(--font-quote);
+  font-size: 1.05rem;
+}
+
+/* ——— Grooming ——— */
+.grooming {
+  padding: var(--space-xl) 0 var(--space-2xl);
+}
+
+.grooming-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.grooming-visual {
+  min-height: 0;
+}
+
+.grooming-visual .media-frame {
+  aspect-ratio: 4 / 5;
+  height: auto;
+  min-height: 0;
+}
+
+.grooming-copy {
+  display: grid;
+  gap: 1.1rem;
+}
+
+/* ——— Founder ——— */
+.founder {
+  padding: var(--space-2xl) 0;
+  background: var(--paper);
+  border-block: 1px solid var(--line);
+}
+
+.founder-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.founder-visual {
+  min-height: 0;
+}
+
+.founder-visual .media-frame {
+  aspect-ratio: 4 / 5;
+  height: auto;
+  min-height: 0;
+}
+
+.founder-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.founder-quote {
+  font-family: var(--font-quote);
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  line-height: 1.45;
+  max-width: 28ch;
+  font-style: italic;
+}
+
+.founder-facts {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.founder-facts li {
+  list-style: none;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.founder-facts li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--marker);
+}
+
+/* ——— Geography ——— */
+.geo {
+  padding: var(--space-xl) 0;
+}
+
+.geo-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.geo-block {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.geo-block h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 0.55rem;
+}
+
+.geo-block p {
+  color: color-mix(in srgb, var(--ink) 74%, transparent);
+  max-width: 40ch;
+}
+
+/* ——— Reviews ——— */
+.reviews {
+  padding: var(--space-xl) 0 var(--space-2xl);
+  background: color-mix(in srgb, var(--bark) 8%, var(--ground));
+}
+
+.review-rail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: var(--space-lg);
+}
+
+.review {
+  padding: 1.4rem 1.25rem;
+  border-top: 2px solid var(--ink);
+  background: color-mix(in srgb, var(--paper) 80%, transparent);
+}
+
+.review-area {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bark);
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+
+.review p {
+  font-family: var(--font-quote);
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+/* ——— Consult ——— */
+.consult {
+  padding: var(--space-2xl) 0;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.consult-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.consult .section-lead {
+  color: color-mix(in srgb, var(--paper) 72%, transparent);
+}
+
+.consult-form {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.35rem;
+  background: color-mix(in srgb, #fff 5%, transparent);
+  border: 1px solid color-mix(in srgb, #fff 12%, transparent);
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.field label {
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--paper) 65%, transparent);
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  border: 1px solid color-mix(in srgb, #fff 18%, transparent);
+  background: color-mix(in srgb, #000 35%, transparent);
+  color: #fff;
+  padding: 0.85rem 0.9rem;
+  border-radius: var(--radius);
+  outline: none;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: color-mix(in srgb, var(--marker) 70%, #fff);
+}
+
+.field textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.form-note {
+  font-size: 0.88rem;
+  color: color-mix(in srgb, var(--paper) 60%, transparent);
+}
+
+.form-success {
+  padding: 1rem;
+  background: color-mix(in srgb, var(--marker) 20%, transparent);
+  border: 1px solid color-mix(in srgb, var(--marker) 50%, transparent);
+}
+
+/* ——— Footer ——— */
+.footer {
+  padding: 2rem 0 2.5rem;
+  background: #100f0d;
+  color: color-mix(in srgb, var(--paper) 75%, transparent);
+  font-size: 0.92rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer strong {
+  color: #fff;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ——— Motion ——— */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes heroDrift {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.1) translate3d(-1.5%, -1%, 0);
+  }
+}
+
+/* ——— Responsive ——— */
+@media (max-width: 980px) {
+  .nav {
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    right: 1.25rem;
+    left: 1.25rem;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+    background: rgba(16, 15, 13, 0.94);
+    border: 1px solid color-mix(in srgb, #fff 16%, transparent);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .requests-grid,
+  .school-layout,
+  .case,
+  .hotel-layout,
+  .grooming-layout,
+  .founder-layout,
+  .geo-layout,
+  .consult-layout,
+  .review-rail {
+    grid-template-columns: 1fr;
+  }
+
+  .school-visual {
+    position: static;
+  }
+
+  .school-visual .media-frame,
+  .grooming-visual .media-frame,
+  .founder-visual .media-frame,
+  .hotel-visual .media-frame {
+    aspect-ratio: 16 / 11;
+    height: auto;
+    min-height: 0;
+  }
+
+  .case {
+    grid-template-columns: 1fr;
+  }
+
+  .case-media {
+    aspect-ratio: 16 / 10;
+  }
+
+  .route {
+    grid-template-columns: 3rem 1fr;
+  }
+
+  .route-go {
+    display: none;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-content {
+    margin-bottom: 3rem;
+  }
+
+  .request-item {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .request-item span:last-child {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-media img,
+  .reveal,
+  .hero-content {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
